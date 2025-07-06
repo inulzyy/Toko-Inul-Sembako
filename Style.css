@@ -1,0 +1,226 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background-color: #008080;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.cart-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: white;
+  color: #008080;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.produk {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.produk-item {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.produk-item:hover {
+  transform: translateY(-5px);
+}
+
+.produk-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.quantity-control button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.produk-item button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.produk-item button:hover {
+  background-color: #006666;
+}
+
+/* Checkout form */
+.checkout {
+  background: white;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.checkout h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #008080;
+}
+
+.checkout form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout label {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.checkout input,
+.checkout textarea,
+.checkout select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.checkout button {
+  margin-top: 1.5rem;
+  background: #008080;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkout button:hover {
+  background: #006666;
+}
+
+/* Animasi terima kasih */
+.thanks-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.thanks-popup.show {
+  display: flex;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.thanks-box {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  animation: popUp 0.5s ease-in-out;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+.thanks-box h2 {
+  color: #008080;
+  margin-bottom: 0.5rem;
+}
+
+.thanks-box p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  background: #eaeaea;
+}

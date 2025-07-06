@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Inul - Sembako</title>
+  <link rel="stylesheet" href="Style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Toko Inul</h1>
+    <p>Sembako Lengkap, Harga Hemat, Kualitas Terjamin!</p>
+    <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+  </header>
+
+  <section class="produk">
+    <div class="produk-item">
+      <img src="img/Beras-Anis.png" alt="Beras">
+      <h3>Beras</h3>
+      <p>Rp140.000 / 10 kg</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Beras', 140000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/Minyak-Goreng.jpeg" alt="Minyak Goreng">
+      <h3>Minyak Goreng</h3>
+      <p>Rp17.000 / liter</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Minyak Goreng', 17000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/gula.jpg" alt="Gula">
+      <h3>Gula</h3>
+      <p>Rp15.000 / kg</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Gula', 15000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/Mie.jpeg" alt="Mie Instan">
+      <h3>Mie Instan</h3>
+      <p>Rp3.000 / bungkus</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Mie Instan', 3000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/daging.jpeg" alt="Daging">
+      <h3>Daging</h3>
+      <p>Rp100.000 / kg</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Daging', 100000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/Telur.jpeg" alt="Telur">
+      <h3>Telur</h3>
+      <p>Rp27.000 / kg</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Telur', 27000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/garam.jpeg" alt="Garam">
+      <h3>Garam</h3>
+      <p>Rp5.000 / bungkus</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Garam', 5000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/susu.jpeg" alt="Susu">
+      <h3>Susu</h3>
+      <p>Rp12.000 / botol</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Susu', 12000, this)">Tambah</button>
+    </div>
+
+    <div class="produk-item">
+      <img src="img/tepung.png" alt="Tepung">
+      <h3>Tepung</h3>
+      <p>Rp18.000 / kg</p>
+      <div class="quantity-control">
+        <button onclick="ubahJumlah(this, -1)">−</button>
+        <input type="number" min="1" value="1">
+        <button onclick="ubahJumlah(this, 1)">+</button>
+      </div>
+      <button onclick="addToCart('Tepung', 18000, this)">Tambah</button>
+    </div>
+  </section>
+
+  <section class="checkout">
+    <h2>Checkout</h2>
+    <form onsubmit="showThanks(); return false;">
+      <label>Nama:</label>
+      <input type="text" name="nama" required>
+
+      <label>Pesanan:</label>
+      <textarea name="total" id="totalPesanan" rows="3" readonly></textarea>
+
+      <label>Alamat Pengiriman:</label>
+      <textarea name="alamat" rows="3" required></textarea>
+
+      <label>Pengiriman:</label>
+      <select name="pengiriman" required>
+        <option disabled selected>Pilih pengiriman</option>
+        <option value="J&T">J&T</option>
+        <option value="Gojek">Gojek</option>
+      </select>
+
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+  </section>
+
+  <div id="thanks-message" class="thanks-popup">
+    <div class="thanks-box">
+      <h2>✅ Terima Kasih!</h2>
+      <p>Pesanan Anda sudah kami terima.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Toko Inul. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function ubahJumlah(btn, delta) {
+      const input = btn.parentElement.querySelector('input');
+      let jumlah = parseInt(input.value);
+      jumlah += delta;
+      if (jumlah < 1) jumlah = 1;
+      input.value = jumlah;
+    }
+
+    function addToCart(nama, harga, btn) {
+      const jumlah = parseInt(btn.parentElement.querySelector('input').value);
+      if (jumlah > 0) {
+        cart.push({ nama, harga, jumlah });
+        document.getElementById("cart-count").textContent = cart.length;
+        hitungTotal();
+      }
+    }
+
+    function hitungTotal() {
+      let total = 0;
+      let detail = [];
+      cart.forEach(item => {
+        total += item.harga * item.jumlah;
+        detail.push(`${item.nama} (${item.jumlah})`);
+      });
+      const deskripsi = detail.join(', ') + ' — Rp' + total.toLocaleString("id-ID");
+      document.getElementById("totalPesanan").value = deskripsi;
+    }
+
+    function showThanks() {
+      const thanks = document.getElementById('thanks-message');
+      thanks.classList.add('show');
+      setTimeout(() => {
+        thanks.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
